@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product">
+            <img src="pro1.webp" alt="Night dress">
+            <h2>Night dress</h2>
+            <p>Comfy Night Dress</p>
+            <p>Price: 199/-</p>
+            <button onclick="addToCart('pro1')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pro2.webp" alt="Night dress">
+            <h2>Night dress</h2>
+            <p>Comfy Night Dress</p>
+            <p>Price: 199/-</p>
+            <button onclick="addToCart('pro2')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pro3.webp" alt="Night dress">
+            <h2>Night dress</h2>
+            <p>Comfy Night Dress</p>
+            <p>Price: 199/-</p>
+            <button onclick="addToCart('pro3')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pro4.webp" alt="Night dress">
+            <h2>Night dress</h2>
+            <p>Comfy Night Dress</p>
+            <p>Price: 199/-</p>
+            <button onclick="addToCart('pro4')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pro5.webp" alt="Night dress">
+            <h2>Night dress</h2>
+            <p>Comfy Night Dress</p>
+            <p>Price: 199/-</p>
+            <button onclick="addToCart('pro5')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pro6.webp" alt="Night dress">
+            <h2>Night dress</h2>
+            <p>Comfy Night Dress</p>
+            <p>Price: 199/-</p>
+            <button onclick="addToCart('pro6')">Add to Cart</button>
+        </div>
+        <!-- Add more product divs here -->
+
+        <!-- Cart items will be displayed here -->
+        <div id="cart-items"></div>
+        <button onclick="returnToHome()">Return to Home</button>
+    </div>
+
+    <script>
+        // Function to add product to cart
+        
+        function addToCart(productId) {
+            // Retrieve the product details based on the productId (you can use AJAX to fetch product details)
+            // For demonstration purposes, let's assume the product details are hardcoded
+            var productDetails = getProductDetails(productId);
+
+            // Create a new cart item element
+            var cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+            cartItem.innerHTML = `
+                <img src="${productDetails.image}" alt="${productDetails.name}">
+                <div>
+                    <h3>${productDetails.name}</h3>
+                    <p>${productDetails.price}</p>
+                </div>
+            `;
+
+            // Append the cart item to the cart
+            document.getElementById("cart-items").appendChild(cartItem);
+        }
+
+        // Function to retrieve product details (in a real application, this would be fetched from a database)
+        function getProductDetails(productId) {
+            var products = {
+                "pro1": {
+                    name: "Night dress",
+                    image: "pro1.webp",
+                    price: "Price: 199/-"
+                },
+                "pro2": {
+                    name: "Night dress",
+                    image: "pro2.webp",
+                    price: "Price: 199/-"
+                },
+                "pro3": {
+                    name: "Night dress",
+                    image: "pro3.webp",
+                    price: "Price: 199/-"
+                },
+                "pro4": {
+                    name: "Night dress",
+                    image: "pro4.webp",
+                    price: "Price: 199/-"
+                },
+                "pro5": {
+                    name: "Night dress",
+                    image: "pro5.webp",
+                    price: "Price: 199/-"
+                },
+                "pro6": {
+                    name: "Night dress",
+                    image: "pro6.webp",
+                    price: "Price: 199/-"
+                }
+                // Add more products here
+            };
+
+            return products[productId];
+        }
+        function returnToHome() {
+            window.location.href = "index.html"; // Adjust the URL as needed
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(211, 220, 238);
+        }
+        .search-container {
+            width: 300px;
+            padding: 16px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .input-group {
+            margin: 10px 0;
+        }
+        .input-group label {
+            display: block;
+            margin: 0 0 10px 0;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 6px 10px;
+            margin: 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Search Page</title>
+</head>
+<body>
+    <div class="search-container">
+        <h2>Search</h2>
+        <form action="#" method="get">
+            <div class="input-group">
+                <label for="search">Search:</label>
+                <input type="text" id="search" name="search" placeholder="Search for Category, Brand or Product" required>
+            </div>
+            <button type="submit">Search</button>
+            <button onclick="returnToHome()">Return to Home</button>
+            <script>
+                
+                function returnToHome() {
+                    window.location.href = "index.html"; // Adjust the URL as needed
+                }
+            </script>
+        </form>
+    </div>
+</body>
+</html>
